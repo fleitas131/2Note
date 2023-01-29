@@ -37,6 +37,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NoteSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.NoteOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +108,10 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
+            // NoteOpenFile
+            // 
+            this.NoteOpenFile.FileName = "openFileDialog1";
+            // 
             // NoteMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -135,5 +140,6 @@
         private ToolStripMenuItem acercaDeToolStripMenuItem;
         private ToolStripMenuItem nuevoToolStripMenuItem;
         private SaveFileDialog NoteSaveFile;
+        private OpenFileDialog NoteOpenFile;
     }
 }

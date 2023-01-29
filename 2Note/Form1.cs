@@ -26,11 +26,6 @@ namespace _2Note
             MessageBox.Show("2Note notepad, proyecto de afleitas.com", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void guardarToolStripMenuItem_Click(object sender, EventArgs e) 
-        {
-
-        }
-
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e) //hace un clear de texbox para nuevo notepad
         {
             if (richTextBox1.Text != null && MessageBox.Show("Desea un nuevo notepad?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -43,7 +38,18 @@ namespace _2Note
             }
         }
 
-        private void guardarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e) //abre archivo txt
+        {
+            OpenFileDialog NoteOpenFile = new OpenFileDialog();
+            NoteOpenFile.Filter = "Text files (*.txt)|*.txt";
+            NoteOpenFile.Title = "Abrir Note";
+            if (NoteOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.Text = File.ReadAllText(NoteOpenFile.FileName);
+            }
+        }
+
+        private void guardarToolStripMenuItem1_Click(object sender, EventArgs e) //guarda el archivo como txt
         {
             SaveFileDialog NoteSaveFile = new SaveFileDialog();
             NoteSaveFile.Filter = "Text files (*.txt)|*.txt";
